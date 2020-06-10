@@ -4,8 +4,8 @@ import 'Screens/FromSNU.dart';
 import 'Screens/History.dart';
 import 'Screens/ToSNU.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyHomePage1 extends StatefulWidget {
+  MyHomePage1({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage1> {
   List<Map> _screens = [
     {
       "child": ToSNU(),
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Icon(Icons.home, size: 30, color: Colors.white),
             Icon(Icons.remove, size: 30, color: Colors.white),
           ],
-          index: _currentIndex, // For the default option (currently home)
+          index: _currentIndex, 
           animationDuration: Duration(milliseconds: 350),
           animationCurve: Curves.decelerate,
           onTap: (index) {

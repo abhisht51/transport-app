@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class To_SNU extends StatelessWidget {
-  // This is a String for the sake of an example.
-  // You can use any type you want.
   final String data;
 
   To_SNU({

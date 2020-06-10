@@ -8,8 +8,11 @@ class ToSNU extends StatefulWidget {
 class _ToSNUState extends State<ToSNU> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Icon(Icons.ac_unit, size: 50)
+    return Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Icon(Icons.ac_unit, size: 50),
+      
     );
   }
 }

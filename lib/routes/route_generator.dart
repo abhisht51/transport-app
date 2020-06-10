@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transport_app/HomePage.dart';
 import 'package:transport_app/main.dart';
 
 import '../routeexample.dart';
@@ -11,7 +12,7 @@ class RouteGenerator{
 
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_)=>MyHomePage());
+        return MaterialPageRoute(builder: (_)=>MyHomePage1());
       case '/toSNU':
         if(args is String){
           return MaterialPageRoute(
