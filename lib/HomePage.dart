@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage1> {
     {
       "child": History(),
       "icon": Icon(
-        Icons.remove,
+        Icons.history,
         size: 30,
         color: Colors.white,
       )
@@ -51,19 +51,23 @@ class _MyHomePageState extends State<MyHomePage1> {
           title: Text(widget.title),
           centerTitle: true,
         ),
-        body: _screens[_currentIndex]['child'],
+        body: AnimatedSwitcher(
+          duration: Duration(milliseconds: 200),
+          transitionBuilder: (Widget child, Animation<double> animation) =>
+              ScaleTransition(
+            child: child,
+            scale: animation,
+          ),
+          child: _screens[_currentIndex]['child'],
+        ),
         bottomNavigationBar: CurvedNavigationBar(
           color: Colors.deepPurple,
-          
           backgroundColor: Colors.white,
           buttonBackgroundColor: Colors.deepPurple,
           height: 50,
-          items: <Widget>[
-            Icon(Icons.add, size: 30, color: Colors.white),
-            Icon(Icons.home, size: 30, color: Colors.white),
-            Icon(Icons.remove, size: 30, color: Colors.white),
-          ],
-          index: _currentIndex, 
+          items: List.generate(
+              _screens.length, (index) => _screens[index]['icon']),
+          index: _currentIndex,
           animationDuration: Duration(milliseconds: 350),
           animationCurve: Curves.decelerate,
           onTap: (index) {
