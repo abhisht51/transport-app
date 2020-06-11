@@ -12,10 +12,12 @@ class RouteGenerator{
 
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_)=>MyHomePage1());
+        return MaterialPageRoute(builder: (_)=>OOOF(),maintainState: true,fullscreenDialog: true); 
+
       case '/toSNU':
         if(args is String){
           return MaterialPageRoute(
+           
             builder: (_)=>To_SNU(data: args,)
           );
         }

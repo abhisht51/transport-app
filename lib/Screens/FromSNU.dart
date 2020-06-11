@@ -13,25 +13,33 @@ class _FromSNUState extends State<FromSNU> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          RaisedButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('');
-            },
-            color: Colors.deepPurpleAccent,
-            child: Text("Hello from the other side"),
-            padding: EdgeInsets.fromLTRB(90, 5, 90, 5),
+          SizedBox(
+            width: MediaQuery.of(context).size.width - 10,
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('');
+              },
+              color: Colors.deepPurpleAccent,
+              child: Text("Hello"),
+              elevation: 5,
+              shape: StadiumBorder(),
+            ),
+          ),
+          SizedBox(
+            width: MediaQuery.of(context).size.width - 10,
+            child: RaisedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('');
+              },
+              color: Colors.deepPurpleAccent,
+              child: Text("from"),
+              shape: StadiumBorder(),
+            ),
           ),
           RaisedButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('');
-            },
-            color: Colors.deepPurpleAccent,
-            child: Text("Hello from the other side"),
-            padding: EdgeInsets.fromLTRB(90, 5, 90, 5),
-          ),
-          RaisedButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('/toSNU',arguments: "Hello Friend");
+              Navigator.of(context)
+                  .pushNamed('/toSNU', arguments: "Hello Friend");
             },
             color: Colors.deepPurpleAccent,
             child: Text("Hello from the other side"),

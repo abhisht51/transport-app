@@ -33,3 +33,16 @@ class To_SNU extends StatelessWidget {
     );
   }
 }
+class OOOF extends StatefulWidget {
+  @override
+  _OOOFState createState() => _OOOFState();
+}
+
+class _OOOFState extends State<OOOF> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.green,
+    );
+  }
+}
