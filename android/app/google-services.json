@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "958333938588",
+    "firebase_url": "https://snu-transport.firebaseio.com",
+    "project_id": "snu-transport",
+    "storage_bucket": "snu-transport.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958333938588:android:ea83b9bd6fb9aecd0e7659",
+        "android_client_info": {
+          "package_name": "com.snu.transport_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958333938588-jofk59tj33mvt9ugb2eqe8throl69f3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRA7wPSfY4uzUD_G8X6j9sL7GCfJNQo8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958333938588-jofk59tj33mvt9ugb2eqe8throl69f3a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
