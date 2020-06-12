@@ -17,10 +17,10 @@ class _FromSNUState extends State<FromSNU> {
             width: MediaQuery.of(context).size.width - 10,
             child: RaisedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('');
+                Navigator.of(context).pushNamed('/login');
               },
               color: Colors.deepPurpleAccent,
-              child: Text("Hello"),
+              child: Text("Login Page"),
               elevation: 5,
               shape: StadiumBorder(),
             ),
@@ -29,10 +29,10 @@ class _FromSNUState extends State<FromSNU> {
             width: MediaQuery.of(context).size.width - 10,
             child: RaisedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed('');
+                Navigator.of(context).pushNamed('/signup');
               },
               color: Colors.deepPurpleAccent,
-              child: Text("from"),
+              child: Text("Sign Up Page"),
               shape: StadiumBorder(),
             ),
           ),
