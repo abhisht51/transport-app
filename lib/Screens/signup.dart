@@ -192,7 +192,7 @@ Widget _buildConfirmPasswordTF() {
         text: TextSpan(
           children: [
             TextSpan(
-              text: 'Don\'t have an Account? ',
+              text: 'Have an Account? ',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 14.0,
@@ -200,7 +200,7 @@ Widget _buildConfirmPasswordTF() {
               ),
             ),
             TextSpan(
-              text: 'Sign Up',
+              text: 'Log In',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 14.0,
