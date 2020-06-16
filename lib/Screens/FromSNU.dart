@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transport_app/services/authentication_services.dart';
 
 class FromSNU extends StatefulWidget {
   @override
@@ -8,6 +9,9 @@ class FromSNU extends StatefulWidget {
 class _FromSNUState extends State<FromSNU> {
   @override
   Widget build(BuildContext context) {
+
+    final AuthenticationService _auth = AuthenticationService();
+
     return Container(
       alignment: Alignment.center,
       child: Column(
@@ -46,11 +50,12 @@ class _FromSNUState extends State<FromSNU> {
             padding: EdgeInsets.fromLTRB(90, 5, 90, 5),
           ),
           RaisedButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('');
+            onPressed: () async {
+              // Navigator.of(context).pushNamed('');
+              await _auth.signOut();
             },
             color: Colors.deepPurpleAccent,
-            child: Text("Hello from the other side"),
+            child: Text("Logout!!!"),
             padding: EdgeInsets.fromLTRB(90, 5, 90, 5),
           ),
         ],

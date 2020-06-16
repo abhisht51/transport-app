@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Temporary imports 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:transport_app/services/authentication_services.dart';
 
 
 class ToSNU extends StatefulWidget {
@@ -61,18 +62,8 @@ class _ToSNUState extends State<ToSNU> {
               onPressed: () async {
                 debugPrint(email);
                 debugPrint(password);
-                try {
-                final status = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-                  if(status != null){
-                    debugPrint("HEYYYYYYYYYYYYYYYYYYYYYYY");
-                    print("Hello :) ");
-                  }
-                }
-                catch(e){
-                  print(e);
-                }
-
-
+                var user = await AuthenticationService().signUpWithEmail(email: email, password: password);
+                debugPrint("Kya dukh hai ");
               },
               color: Colors.deepPurple.shade400,
               child: Text("Submit"),
