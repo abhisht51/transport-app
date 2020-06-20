@@ -1,22 +1,24 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:transport_app/services/authentication_services.dart';
 import 'package:transport_app/utilities/constants.dart';
 
-
 class LoginScreen extends StatefulWidget {
-
-
   @override
   _LoginScreenState createState() => _LoginScreenState();
 
   LoginScreen({
     Key key,
   }) : super(key: key);
-
 }
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _rememberMe = false;
+  var email;
+  var password;
+
+  final AuthenticationService _auth = AuthenticationService();  
 
   Widget _buildEmailTF() {
     return Column(
@@ -37,6 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
+            onChanged: (value) => email = value,
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14.0),
@@ -72,6 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
+            onChanged: (value) => password = value,
             decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14.0),
@@ -130,12 +134,30 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _buildLoginBtn() {
-    return Container(      
+    return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Login Button Pressed'),
+        onPressed: () async {
+          dynamic user = await _auth
+              .loginWithEmail(email: email, password: password);
+          if (user != null) {
+            // Navigator.pushNamed(context, '/');
+
+            print(user);
+            print("Hello");
+            print(user.toString());
+            //  print(F.toString());
+
+          } else {
+            // TODO: Handle error conditions
+
+            print("Hello Darkness my sad password");
+          }
+
+          debugPrint("Login Successful!!");
+        },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
@@ -155,14 +177,11 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-
-
   Widget _buildSignupBtn() {
     return GestureDetector(
       onTap: () {
         print('Sign Up Button Pressed');
         Navigator.of(context).pushNamed('/signup');
-
       },
       child: RichText(
         text: TextSpan(
@@ -205,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [                   
+                    colors: [
                       Colors.deepPurple.shade500,
                       Colors.deepPurple.shade600,
                       Colors.deepPurple.shade700,
@@ -216,7 +235,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Container(
-                height: double.infinity,                
+                height: double.infinity,
                 child: SingleChildScrollView(
                   physics: AlwaysScrollableScrollPhysics(),
                   padding: EdgeInsets.symmetric(
@@ -245,8 +264,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       _buildRememberMeCheckbox(),
                       _buildLoginBtn(),
                       _buildSignupBtn(),
-                      
-                      
                     ],
                   ),
                 ),

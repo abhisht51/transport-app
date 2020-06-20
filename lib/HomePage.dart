@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:provider/provider.dart';
 import 'Screens/FromSNU.dart';
 import 'Screens/History.dart';
 import 'Screens/To/ToSNU.dart';
@@ -48,6 +50,10 @@ class _MyHomePageState extends State<MyHomePage1> {
 
   @override
   Widget build(BuildContext context) {
+    
+    
+
+
     return SafeArea(
       child: Scaffold(
         // backgroundColor: Colors.black45,
