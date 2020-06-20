@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'Screens/FromSNU.dart';
 import 'Screens/History.dart';
-import 'Screens/ToSNU.dart';
+import 'Screens/To/ToSNU.dart';
 
 class MyHomePage1 extends StatefulWidget {
   MyHomePage1({Key key, this.title}) : super(key: key);
@@ -16,7 +16,8 @@ class MyHomePage1 extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage1> {
   List<Map> _screens = [
     {
-      "child": ToSNU(),
+      "title": "Book Shuttle from SNU",
+      "child": FromSNU(),
       "icon": Icon(
         Icons.add,
         size: 30,
@@ -24,7 +25,8 @@ class _MyHomePageState extends State<MyHomePage1> {
       )
     },
     {
-      "child": FromSNU(),
+      "title": "Book Shuttle to SNU",
+      "child": ToSNU(),
       "icon": Icon(
         Icons.home,
         size: 30,
@@ -32,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage1> {
       )
     },
     {
+      "title": "Booking History",
       "child": History(),
       "icon": Icon(
         Icons.history,
@@ -47,8 +50,9 @@ class _MyHomePageState extends State<MyHomePage1> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        // backgroundColor: Colors.black45,
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text(_screens[_currentIndex]['title']),
           centerTitle: true,
         ),
         body: AnimatedSwitcher(
@@ -71,7 +75,6 @@ class _MyHomePageState extends State<MyHomePage1> {
           animationDuration: Duration(milliseconds: 350),
           animationCurve: Curves.decelerate,
           onTap: (index) {
-            print("Current Index is: $index");
             setState(() {
               _currentIndex = index;
             });
